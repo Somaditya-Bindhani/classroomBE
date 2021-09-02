@@ -1,0 +1,121 @@
+.banner {
+  /* border: 2px solid red; */
+  display: flex;
+  height: 60vh;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 65vh;
+  background: linear-gradient(to left bottom,rgb(133, 48, 126) 10%,rgb(96, 98, 221));
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+
+}
+ .wave {
+  position: absolute;
+  width: 100%;
+  height: 129px;
+  bottom: 0;
+  left: 0;
+  background: url("../../assets/wave.png");
+  animation: animate 5s linear infinite;
+  animation-delay: 0s;
+}
+.wave:before {
+  content: " ";
+  width: 100%;
+  height: 129px;
+  background: url("../../assets/wave.png");
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+  animation: animate2 5s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animate {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 1280px;
+  }
+}
+@keyframes animate2 {
+  0% {
+    background-position: 1280px;
+  }
+  100% {
+    background-position: 0px;
+  }
+}
+.animation {
+  position: relative;
+  top:-5rem;
+  height: 500px;
+  width: 500px;
+  width: 50%;
+  /* border: 2px solid red; */
+}
+.content {
+  position: relative;
+  top:-5rem;
+  display: flex;
+  /* border: 2px solid red; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+.content h2 {
+  color: white;
+  font-size: 2.5rem;
+}
+.actions button {
+  color: white;
+  cursor: pointer;
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+  position: relative;
+  width: 200px;
+  padding: 15px 0;
+  text-align: center;
+  margin: 20px 10px;
+  border-radius: 25px;
+  border: 2px solid rgb(34, 28, 114);
+  background: transparent;
+  overflow: hidden;
+  z-index: 50;
+}
+.actions span {
+  background-color: rgb(34, 28, 114);
+  height: 100%;
+  width: 0%;
+  border-radius: 40px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.5s;
+}
+.actions button:hover span {
+  width: 100%;
+}
+.actions button:hover {
+  border: none;
+}
+.whole{
+  z-index: -10;
+  background-color: white;
+}
+.try{
+  position: relative;
+  top: -5rem;
+  /* border: 2px solid red; */
+  height: 5rem;
+  background: linear-gradient(to right bottom,rgb(127, 128, 216),rgb(143, 86, 138));
+  z-index: -1;
+}
