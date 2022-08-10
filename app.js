@@ -40,10 +40,10 @@ app.use((err, req, res, next) => {
 
 try {
   mongoose
-    .connect(
-      "mongodb+srv://ClassroomUser:CkEaiwSfsu7bn7xC@cluster0.gecug.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-      { useNewUrlParser: true, useUnifiedTopology: true }
-    )
+    .connect(process.env.MONGO_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
     .then(() => {
       app.listen(5000, () => {
         console.log("Running on Port 5000");
