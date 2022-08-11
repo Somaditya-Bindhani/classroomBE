@@ -11,7 +11,10 @@ const auth = (req, res, next) => {
     if (!token) {
       return next(new HttpError("Auth failed", 402));
     } else {
-      const decodedToken = jwt.verify(token, process.env.JWT_KEY);
+      const decodedToken = jwt.verify(
+        token,
+        process.env.JWT_TOKEN
+      );
       req.userData = {
         userId: decodedToken.id,
       };
