@@ -4,7 +4,7 @@ const router = express.Router();
 const studentController = require("../controllers/students");
 const authMiddlerware = require("../middlewares/auth");
 
-const imageGetter = require("../middlewares/multer");
+const imageGetterNuhe = require("../middlewares/multer");
 router.post(
   "/signup",
   // imageGetter.single("image"),
