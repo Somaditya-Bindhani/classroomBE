@@ -10,8 +10,12 @@ const subjectRouter = require("./routers/subjectRouter");
 const { getFile } = require("./controllers/aws");
 const { prototype } = require("./models/http-error");
 
+const cors = require("cors"); // <--- Import cors
+
+
 const PORT = process.env.PORT || 5000;
 app.use(express.json());
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.status(200).json("Classroom BE");
